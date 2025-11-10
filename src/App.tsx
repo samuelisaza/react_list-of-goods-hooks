@@ -58,7 +58,7 @@ export const App: React.FC = () => {
       <div className="buttons">
         <button
           type="button"
-          className={`button is-info ${sortField !== 'alpha' ? 'is-light' : ''}`}
+          className={`button is-info ${sortField !== SortField.alphabet ? 'is-light' : ''}`}
           onClick={handleSortAlpha}
         >
           Sort alphabetically
@@ -66,7 +66,7 @@ export const App: React.FC = () => {
 
         <button
           type="button"
-          className={`button is-success ${sortField !== 'length' ? 'is-light' : ''}`}
+          className={`button is-success ${sortField !== SortField.length ? 'is-light' : ''}`}
           onClick={handleSortLength}
         >
           Sort by length
@@ -80,7 +80,7 @@ export const App: React.FC = () => {
           Reverse
         </button>
 
-        {sortField !== 'none' || isReversed ? (
+        {sortField !== SortField.initial || isReversed ? (
           <button
             type="button"
             className="button is-danger is-light"
